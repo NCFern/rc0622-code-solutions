@@ -1,0 +1,19 @@
+.button {
+  background-color: lightseagreen;
+  cursor: pointer;
+  padding: 30px 50px;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: orange;
+}
+
+thead {
+  color: white;
+  background-color: black;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(179 48 179);
+}
