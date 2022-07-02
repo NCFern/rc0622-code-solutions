@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(28 150 218);
+  color: white;
+  font-family:
+    Lato,
+    sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-third {
+  width: 33%;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}
+
+.health {
+  height: 120px;
+  width: 120px;
+}
+
+.content-header {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+.content-body {
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+}
