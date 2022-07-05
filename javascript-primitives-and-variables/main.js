@@ -12,7 +12,7 @@ console.log('typeof totalPets', typeof totalPets);
 
 var unknown = 'null';
 console.log('value of unknown', unknown);
-console.log('type of unknown', typeof null);
+console.log('type of unknown', typeof unknown);
 
 var never;
 console.log('value of never', never);
