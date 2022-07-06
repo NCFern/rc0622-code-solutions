@@ -27,6 +27,10 @@ var library = [
     author: 'Yoru Sumino'
   },
   {
+    title: 'Love Is Hard For An Otaku',
+    author: 'Fujita'
+  },
+  {
     title: 'Spy X Family',
     author: 'Tatsuya Endo'
   }
@@ -49,7 +53,7 @@ var css = {
 
 library.push(js);
 library.unshift(css);
-library.splice(1, 0);
+library.splice(1, 1);
 console.log('library:', library);
 
 var fullName = 'Volkner Tide';
