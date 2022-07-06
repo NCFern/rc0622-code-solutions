@@ -1,0 +1,58 @@
+.container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.border-bottom {
+  border-bottom: 2px solid lightgray;
+  margin-bottom: 100px;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.padding-top {
+  padding-top: 50px;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.blue-logo-size {
+  width: 30%;
+}
+
+#blue-button-header {
+  background-color: rgb(42 68 100);
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  border-style: unset;
+  border-radius: 6px;
+}
+
+.navi-list {
+  font-family: Avenir, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: unset;
+  color: lightgray;
+}
+
+ul li {
+  display: inline-block;
+  padding: 10px;
+}
