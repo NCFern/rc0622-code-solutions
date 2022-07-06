@@ -8,13 +8,13 @@ console.log('value of colors[0]:', colors[0]);
 console.log('value of colors[1]:', colors[1]);
 console.log('value of colors[2]:', colors[2]);
 
-var America = colors[0] + ', ' + colors[1] + ', and ' + colors[2] + '.';
-console.log('America is', America);
+var america = colors[0] + ', ' + colors[1] + ', and ' + colors[2] + '.';
+console.log('America is', america);
 
 colors[2] = 'green';
 
-var Mexico = colors[0] + ', ' + colors[1] + ', and ' + colors[2] + '.';
-console.log('Mexico is', Mexico);
+var mexico = colors[0] + ', ' + colors[1] + ', and ' + colors[2] + '.';
+console.log('Mexico is', mexico);
 
 console.log('value of colors:', colors);
 
