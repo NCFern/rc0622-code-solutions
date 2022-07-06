@@ -27,6 +27,7 @@ h1 {
   text-align: center;
   padding-left: 100px;
   padding-right: 100px;
+  line-height: 35px;
 }
 
 .column-half {
@@ -35,14 +36,15 @@ h1 {
 
 .quarter {
   height: 50%;
-  width: 75%;
+  width: 100%;
   display: flex;
   padding-top: 40px;
 }
 
-p {
-  line-height: 30px;
-  width: 100%;
+.text-content {
+  margin-left: 10px;
+  margin-right: 30px;
+  line-height: 25px;
 }
 
 .center {
