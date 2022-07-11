@@ -1,0 +1,34 @@
+body {
+  font-family: Barlow, sans-serif;
+  background-color: #f7f8fa;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.column-fourth {
+  width: 25%;
+}
+
+.screen {
+  width: 100%;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
