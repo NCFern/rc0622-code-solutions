@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+
+.background-on {
+  background-color: rgb(254 249 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.bulb-on {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(250 234 132);
+  border-color: transparent;
+  box-shadow: 0 0 30px 0 #fdff3d;
+}
+
+.background-off {
+  background-color: rgb(17 17 17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.bulb-off {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(37 37 37);
+  border-color: transparent;
+  box-shadow: 0 -5px 15px 8px rgb(33 33 33 / 90%);
+}
