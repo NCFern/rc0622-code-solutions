@@ -36,7 +36,7 @@ button:focus {
 }
 
 button:active {
-  transform: translateY(30px);
+  transform: translateY(0.25rem);
 }
 
 div:first-child > .pokeball {
