@@ -6,6 +6,19 @@
   display: flex;
 }
 
+.column-full {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
 .column-fifth {
   width: 20%;
+}
+
+.style {
+  width: 100%;
+  height: 100%;
 }
