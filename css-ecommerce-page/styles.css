@@ -1,0 +1,11 @@
+.container {
+  max-width: 1000px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-fifth {
+  width: 20%;
+}
