@@ -19,17 +19,17 @@ var trashTaste = [
 console.log('trashTaste:', trashTaste);
 console.log('typeof trashTaste:', typeof trashTaste);
 
-var JSONbooks = JSON.stringify(trashTaste);
+var booksJSON = JSON.stringify(trashTaste);
 
-console.log('JSONbooks:', JSONbooks);
-console.log('typeof JSONbooks', typeof JSONbooks);
+console.log('booksJSON:', booksJSON);
+console.log('typeof booksJSON:', typeof booksJSON);
 
-var JSONstudent = '{"id" : 8675309, "name" : "Tommy Tutone"}';
+var studentJSON = '{"id" : 8675309, "name" : "Tommy Tutone"}';
 
-console.log('JSONstudent:', JSONstudent);
-console.log('typeof JSONstudent', typeof JSONstudent);
+console.log('studentJSON:', studentJSON);
+console.log('typeof studentJSON:', typeof studentJSON);
 
-var student = JSON.parse(JSONstudent);
+var student = JSON.parse(studentJSON);
 
 console.log('student:', student);
-console.log('typeof student', typeof student);
+console.log('typeof student:', typeof student);
