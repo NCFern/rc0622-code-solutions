@@ -1,4 +1,3 @@
-setInterval(timeCode, 1000);
 
 var getMessage = document.querySelector('.countdown-display');
 var finalCountdown = 4;
@@ -9,6 +8,8 @@ function timeCode() {
     getMessage.textContent = finalCountdown;
   } else {
     getMessage.textContent = '~Earth Beeeelooowww Us~';
-    clearInterval(finalCountdown);
+    clearInterval(interval);
   }
 }
+
+var interval = setInterval(timeCode, 1000);
