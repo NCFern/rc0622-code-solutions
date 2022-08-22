@@ -1,6 +1,7 @@
-// const nextId = 1;
 const express = require('express');
 const app = express();
+
+let nextId = 1;
 const grades = {};
 
 app.get('/api/grades', (req, res) => {
@@ -12,6 +13,16 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.use('/api/grades', express.json());
+
+app.post('/api/grades', (req, res, next) => {
+  const newInfo = req.body;
+  newInfo.id = nextId;
+  grades[nextId] = newInfo;
+  nextId++;
+  res.status(201).send(newInfo);
+
+  next();
+});
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
