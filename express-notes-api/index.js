@@ -58,6 +58,70 @@ app.post('/api/notes', (req, res) => {
     });
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const notesNumber = req.params.id;
+  if (Number(notesNumber) <= 0 || !Number.isInteger(Number(notesNumber))) {
+    res.status(400).json({
+      error: 'id must be a positive interger'
+    });
+    return;
+  } else if (!data.notes[notesNumber]) {
+    res.status(404).json({
+      error: `cannot find note with id ${notesNumber}.`
+    });
+    return;
+  }
+  delete data.notes[notesNumber];
+  fs.writeFile('./data.json',
+    JSON.stringify(data, null, 2),
+    err => {
+      if (err) {
+        console.error('Error', err);
+        res.status(500).json({
+          error: 'An unexpected error occured'
+        });
+        return;
+      }
+      res.status(204).send();
+    }
+  );
+});
+
+app.put('api/notes/:id', (req, res) => {
+  const notesNumber = req.params.id;
+  if (Number(notesNumber) <= 0 || !Number.isInteger(Number(notesNumber))) {
+    res.status(400).json({
+      error: 'id must be a positive interger'
+    });
+    return;
+  } else if (!req.body.content) {
+    res.status(400).json({
+      error: 'content is a required field'
+    });
+    return;
+  } else if (!data.notes[notesNumber]) {
+    res.status(404).json({
+      error: `cannot find note with id ${notesNumber}.`
+    });
+    return;
+  }
+
+  data.notes[notesNumber].content = req.body.content;
+  // const replaceEntry = data.notes[notesNumber];
+
+  // fs.writeFile('./data.json', JSON.stringify(data, null, 2),
+  //   err => {
+  //     console.error('Error', err);
+  //     res.status(500).json({
+  //       error: 'An unexpected error occured'
+  //     });
+  //     return;
+  //   }
+  //     res.status(200).json(replaceEntry);
+  //   }
+  // );
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Express server listening on port 3000');
