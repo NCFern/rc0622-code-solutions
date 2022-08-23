@@ -87,7 +87,7 @@ app.delete('/api/notes/:id', (req, res) => {
   );
 });
 
-app.put('api/notes/:id', (req, res) => {
+app.put('/api/notes/:id', (req, res) => {
   const notesNumber = req.params.id;
   if (Number(notesNumber) <= 0 || !Number.isInteger(Number(notesNumber))) {
     res.status(400).json({
@@ -107,19 +107,20 @@ app.put('api/notes/:id', (req, res) => {
   }
 
   data.notes[notesNumber].content = req.body.content;
-  // const replaceEntry = data.notes[notesNumber];
+  const replaceEntry = data.notes[notesNumber];
 
-  // fs.writeFile('./data.json', JSON.stringify(data, null, 2),
-  //   err => {
-  //     console.error('Error', err);
-  //     res.status(500).json({
-  //       error: 'An unexpected error occured'
-  //     });
-  //     return;
-  //   }
-  //     res.status(200).json(replaceEntry);
-  //   }
-  // );
+  fs.writeFile('./data.json', JSON.stringify(data, null, 2),
+    err => {
+      if (err) {
+        console.error('Error', err);
+        res.status(500).json({
+          error: 'An unexpected error occured'
+        });
+        return;
+      }
+      res.status(200).json(replaceEntry);
+    }
+  );
 });
 
 app.listen(3000, () => {
