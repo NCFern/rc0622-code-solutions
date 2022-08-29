@@ -9,6 +9,7 @@ const db = new pg.Pool({
 });
 
 const app = express();
+app.use('/api/grades', express.json());
 
 app.get('/api/grades/:gradeId', (req, res) => {
   const gradeId = Number(req.params.gradeId);
@@ -39,6 +40,12 @@ app.get('/api/grades/:gradeId', (req, res) => {
         return;
       }
       res.json(grades);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
     });
 });
 
