@@ -17,7 +17,6 @@ const traits = [
   { trainer: 'ash' }
 ];
 
-const initialSum = 0;
 const finalSum = numbers.reduce(
   (previousValue, currentValue) => previousValue + currentValue
 );
@@ -29,3 +28,27 @@ const finalProduct = numbers.reduce(
 );
 
 console.log(finalProduct);
+
+const initialNumber = 0;
+const balance = account.reduce(
+  (previousValue, currentValue) => {
+    if (currentValue.type === 'deposit') {
+      return previousValue + currentValue.amount;
+    } else {
+      return previousValue - currentValue.amount;
+    }
+  }, initialNumber
+);
+
+console.log(balance);
+
+const finalComposite = {};
+const composite = traits.reduce(
+  (previousValue, currentValue) => {
+    Object.assign(finalComposite, previousValue);
+    Object.assign(finalComposite, currentValue);
+    return finalComposite;
+  }
+);
+
+console.log(composite);
