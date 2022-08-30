@@ -22,7 +22,11 @@ app.get('/api/grades/:gradeId', (req, res) => {
   }
 
   const sql = `
-  select *
+  select "gradeId",
+         "name",
+         "course",
+         "score",
+         "createdAt"
   from "grades"
   where "gradeId" = $1
   `;
@@ -40,6 +44,28 @@ app.get('/api/grades/:gradeId', (req, res) => {
         return;
       }
       res.json(grades);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+});
+
+app.get('/api/grades', (req, res) => {
+  const sql = `
+  select "gradeId",
+         "name",
+         "course",
+         "score",
+         "createdAt"
+  from "grades"
+  where "gradeId" = $1
+  `;
+  db.query(sql)
+    .then(result => {
+      res.status(200).json(result.rows);
     })
     .catch(err => {
       console.error(err);
