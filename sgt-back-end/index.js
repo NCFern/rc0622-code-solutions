@@ -61,8 +61,8 @@ app.get('/api/grades', (req, res) => {
          "score",
          "createdAt"
   from "grades"
-  where "gradeId" = $1
   `;
+
   db.query(sql)
     .then(result => {
       res.status(200).json(result.rows);
