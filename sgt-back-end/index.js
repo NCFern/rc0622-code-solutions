@@ -11,7 +11,7 @@ const db = new pg.Pool({
 const app = express();
 app.use('/api/grades', express.json());
 
-app.get('/api/grades/:gradeId', (req, res) => {
+app.get('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = Number(req.params.gradeId);
 
   if (!Number.isInteger(gradeId) || gradeId < 1) {
@@ -53,7 +53,7 @@ app.get('/api/grades/:gradeId', (req, res) => {
     });
 });
 
-app.get('/api/grades', (req, res) => {
+app.get('/api/grades', (req, res, next) => {
   const sql = `
   select "gradeId",
          "name",
@@ -73,6 +73,20 @@ app.get('/api/grades', (req, res) => {
         error: 'An unexpected error occured.'
       });
     });
+});
+
+app.post('/api/grades', (req, res, next) => {
+  const entry = req.body;
+  if (!entry.name || !entry.course) {
+    res.status(400).json({
+      error: 'Please entry valid entry'
+    });
+  }
+  // const sql = `
+  // insert into "grades" ("name", "course", "score")
+  // values ($1,$2,$3)
+  // returning *
+  // `;
 });
 
 app.listen(3000, () => {
