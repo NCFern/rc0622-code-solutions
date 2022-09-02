@@ -1,0 +1,53 @@
+button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(70 70 70);
+  border-radius: 0.25rem;
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+button:hover {
+  filter: brightness(1.4);
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(20px);
+}
+
+.button-1 {
+  background-color: rgb(53 28 117);
+  color: rgb(255 255 255);
+}
+
+.button-2 {
+  background-color: rgb(103 78 167);
+  color: rgb(255 255 255);
+}
+
+.button-3 {
+  background-color: rgb(224 102 102);
+  color: rgb(255 255 255);
+}
+
+.button-4 {
+  background-color: rgb(246 178 107);
+  color: rgb(70 70 70);
+}
+
+.button-5 {
+  background-color: rgb(231 231 73);
+  color: rgb(70 70 70);
+}
+
+.button-6 {
+  color: red;
+  border-color: red;
+  background-color: rgb(255 255 255);
+}
+
+.button-7 {
+  color: white;
+  background-color: red;
+}
