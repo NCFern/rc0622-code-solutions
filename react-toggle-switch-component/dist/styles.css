@@ -1,0 +1,22 @@
+.toggle-container {
+  width: 100px;
+  height: 200px;
+}
+
+.toggle-background {
+  width: 300px;
+  height: 200px;
+  background-color: lightgray;
+  border-radius: 42%;
+}
+
+.toggle-circle {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.background-color-on {
+  background-color: greenyellow;
+}
