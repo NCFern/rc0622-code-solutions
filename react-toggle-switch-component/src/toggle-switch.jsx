@@ -13,14 +13,14 @@ export default class ToggleSwitch extends React.Component {
 
   render() {
     // console.log(this.state);
-    return (
-      <div className='toggle-container'>
-        <div className='toggle-background'>
-          <div className='toggle-circle'></div>
-        </div>
-      </div>
-
-    );
-
+    if (this.state.isClicked === false) {
+      return <div onClick={this.handleToggle} className='border off'>
+        <div className='switch-off'></div>
+      </div>;
+    } else if (this.state.isClicked === true) {
+      return <div onClick={this.handleToggle} className='border on'>
+        <div className='switch-on'></div>
+      </div>;
+    }
   }
 }
