@@ -1,3 +1,19 @@
-.error-text {
+.pass-error {
   color: red;
+}
+
+.pass-success {
+  color: chartreuse;
+}
+
+.submit-button {
+  margin-top: 10px;
+}
+
+.hide-mark {
+  visibility: hidden;
+}
+
+i {
+  margin-left: 10px;
 }
