@@ -33,7 +33,7 @@ export default class ValidatedInput extends React.Component {
 
   render() {
     const iconHidden = (this.state.errorMessage === '') ? 'hide-mark' : '';
-    const statusIcon = (this.state.errorMessage) ? 'fa-solid fa-xmark pass-error' : 'fa-solid fa-check pass-success';
+    const iconStatus = (this.state.errorMessage) ? 'fa-solid fa-xmark pass-error' : 'fa-solid fa-check pass-success';
     return (
         <form>
       <div>
@@ -45,7 +45,7 @@ export default class ValidatedInput extends React.Component {
       value={this.state.value}
       onChange={this.handlePassword}>
       </input>
-      <i className={`${statusIcon} ${iconHidden}`}></i>
+      <i className={`${iconStatus} ${iconHidden}`}></i>
 
       <div className='error-message'>
         <span className='pass-error'>{this.state.errorMessage}</span>
