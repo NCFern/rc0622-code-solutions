@@ -9,10 +9,10 @@
 // return final array //
 
 function flatten(array) {
-  var finalFlatten = [];
-  for (var i = 0; i < array.length; i++) {
+  const finalFlatten = [];
+  for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i])) {
-      for (var j = 0; j < array[i].length; j++) {
+      for (let j = 0; j < array[i].length; j++) {
         finalFlatten.push(array[i][j]);
       }
     } else {
