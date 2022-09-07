@@ -6,33 +6,34 @@ export default class HotButton extends React.Component {
     this.state = {
       isClicked: false
     };
-    this.handleDrawer = this.handleDrawer.bind(this);
+    this.openDrawer = this.openDrawer.bind(this);
+    this.closeDrawer = this.closeDrawer.bind(this);
   }
 
-  handleDrawer() {
-    this.setState({ isClicked: !this.state.isClicked });
+  openDrawer(event) {
+    this.setState({ isClicked: true });
+  }
+
+  closeDrawer(event) {
+    this.setState({ isClicked: false });
   }
 
   render() {
-    const showDrawer = (this.state.isClicked) ? '' : 'closed';
-
     return (
-      <div className="drawer-content">
-        <div className="row">
-          <div className="column-full">
-            <i className="fa-solid fa-bars" onClick={this.handleDrawer}></i>
-          </div>
+      <div>
+        <i onClick={this.openDrawer}
+           className="fa-solid fa-bars" >
+        </i>
+        <div onClick={this.closeDrawer}
+             className={this.state.isClicked ? 'shade' : 'container'}>
         </div>
-        <div className={`${showDrawer}`}>
+        <div className={this.state.isClicked ? 'menu' : 'hidden'}>
           <h1>SOS Brigade</h1>
-          <h2>Aliens</h2>
-          <h2>Time Travellers</h2>
-          <h2>Espers</h2>
+          <h3 onClick={this.closeDrawer}>Aliens</h3>
+          <h3 onClick={this.closeDrawer}>Time Travellers</h3>
+          <h3 onClick={this.closeDrawer}>Espers</h3>
         </div>
-
-    </div>
+      </div>
     );
-
   }
-
 }
