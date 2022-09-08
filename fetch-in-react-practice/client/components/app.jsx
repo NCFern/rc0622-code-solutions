@@ -19,6 +19,12 @@ export default class App extends React.Component {
      * Then 😉, once the response JSON is received and parsed,
      * update state with the received todos.
      */
+
+    fetch('api/todos')
+      .then(response => response.json())
+      .then(data => this.setState({ todos: data }))
+      .catch(err => console.error('Something went wrong', err));
+
   }
 
   addTodo(newTodo) {
@@ -38,6 +44,20 @@ export default class App extends React.Component {
     * TIP: Use Array.prototype.concat to create a new array containing the contents
     * of the old array, plus the object returned by the server.
     */
+    // newToDo: { task: '-insert task here-', isCompleted: 'false' }
+    fetch('api/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    })
+
+      .then(response => response.json())
+      .then(data => this.setState({
+        todos: this.state.todos.concat(data)
+      }))
+      .catch(err => console.error('Something went wrong', err));
   }
 
   toggleCompleted(todoId) {
@@ -62,6 +82,21 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+
+    const clickTask = this.state.todos.find(todo => todo.todoId === todoId);
+    const completeTask = { isCompleted: !clickTask.isCompleted };
+
+    fetch(`api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(completeTask)
+    })
+      .then(response => response.json())
+      .then(data =>
+        this.setState({ todos: this.state.todos.map(todo => (todo.todoId === todoId) ? data : todo) }))
+      .catch(err => console.error('Something went wrong', err));
   }
 
   render() {
