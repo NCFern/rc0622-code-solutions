@@ -1,0 +1,44 @@
+body {
+  background-image: url("../src/sos.png");
+  background-size: 50%;
+}
+
+.fa-bars {
+  font-size: 70px;
+  position: relative;
+}
+
+.container {
+  height: 100vh;
+}
+
+.shade {
+  background-color: rgb(0 0 0 / 50%);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu {
+  width: 20rem;
+  height: 100vh;
+  position: absolute;
+  border-right: solid 2px black;
+  border-top: solid 2px black;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.fa-bars:hover {
+  cursor: pointer;
+}
+
+h3:hover {
+  cursor: pointer;
+}
