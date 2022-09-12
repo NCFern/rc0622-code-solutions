@@ -1,0 +1,19 @@
+.dropdown {
+  display: flex;
+  align-items: center;
+  border: solid 1px black;
+  width: 450px;
+  height: 50px;
+  padding-left: 20px;
+  background-color: lightgray;
+}
+
+.text-box {
+  width: 460px;
+  border: solid 1px black;
+  padding-left: 10px;
+}
+
+.hidden {
+  display: none;
+}

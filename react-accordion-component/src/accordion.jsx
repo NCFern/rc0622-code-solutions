@@ -1,5 +1,5 @@
 import React from 'react';
-import { SatisfactionArray } from './Satisfaction';
+import { SatisfactionArray } from './topics';
 
 export default class Accordion extends React.Component {
   constructor(props) {
@@ -8,7 +8,8 @@ export default class Accordion extends React.Component {
       clicked: null,
       topics: SatisfactionArray
     };
-    this.handleDropdown.bind(this);
+    this.handleDropdown = this.handleDropdown.bind(this);
+    this.createTopic = this.createTopic.bind(this);
   }
 
   handleDropdown(event) {
@@ -20,7 +21,19 @@ export default class Accordion extends React.Component {
   }
 
   createTopic(topic) {
-
+    const { topics, clicked } = this.state;
+    return topics.map(topic => {
+      return (
+        <div key={topic.name}>
+          <div onClick={this.handleDropdown} className='dropdown'>
+            <h1>{topic.name}</h1>
+          </div>
+          <div className={topic.name === clicked ? 'text-box' : 'hidden'}>
+            <p>{topic.text}</p>
+          </div>
+        </div>
+      );
+    });
   }
 
   render() {
