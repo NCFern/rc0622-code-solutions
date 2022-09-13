@@ -1,0 +1,22 @@
+SIGN UP
+- create post route on the app in order to sign up
+- we want to get username/password from request.body
+- if there is no username/password, throw 400 error
+- use argon2 to hash password
+- the inputted username/password is included in SQL statement and inserted into database table
+- when successfully stored, the userID, username, and createdAt is returned to the client
+
+SIGN IN
+- create post route on the app to sign in
+- user gives username/password that is put into request.body
+- if username/password is missing, throw 401 error
+- use sql to select userId and hashed password from users
+- compare users to result.rows from database to see if username match
+- if there is no match, throw 401 error
+- if there is a match, proceed to see if passwords match
+- use argon2.verify to see if hashed password matches password
+- if there is no match, throw 401 error
+- if there is a match, assign both userID and username to var payload
+- use sign method of jwt object to produce var token with payload and TOKEN.SECRET from env file
+- token is sent back to the client from the server
+-
