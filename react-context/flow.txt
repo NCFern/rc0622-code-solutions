@@ -19,4 +19,15 @@ SIGN IN
 - if there is a match, assign both userID and username to var payload
 - use sign method of jwt object to produce var token with payload and TOKEN.SECRET from env file
 - token is sent back to the client from the server
--
+
+USER STAYS SIGNED IN
+- token is stored in local storage due to the handleSignIn function
+- when user refreshes page, componentDidMount method of app.jsx is called
+- URL route property gets stored in this.state
+- token is retrieved from local storage and is checked
+- if isAuthorizing property of this.state is false, the app will run renderPage function
+- renderPage function returns the home component
+
+USER CAN SIGN OUT
+- handleSignOut function removes the token from localStorage and resets user in state to null
+- the handleSignOut is called from the navbar component
