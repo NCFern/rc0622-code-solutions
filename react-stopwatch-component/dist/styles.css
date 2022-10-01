@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.watch {
+  border: 5px solid;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+i {
+  margin: auto;
+  font-size: 50px;
+  padding-top: 30px;
+}
